@@ -1,0 +1,22 @@
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore virtual environments
+.venv/
+
+# Ignore environment variable files
+.env
+
+# Ignore service account keys
+service_account.json
+
+# Ignore log and temporary files
+*.log
+*.tmp
+
+# Ignore IDE settings (e.g., VS Code)
+.vscode/
+
+#Ignore all json files setup
+*.json
