@@ -1,0 +1,81 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    long long credit;
+    long long kount; // credit card calculator for length
+    int length = 0;  // credit card length
+    int position = 0;
+    int oddsum = 0;  // Sum for odds
+    int evensum = 0; // Sum for evens
+    credit = get_long("Please enter the credit card number: ");
+
+    kount = credit;
+
+    while (kount != 0)
+    {
+        kount = kount / 10;
+        length++;
+    }
+
+    long long temp = credit;
+    while (temp > 0)
+    {
+        int digit = (temp % 10); // Isolate each digit
+        if (position % 2 == 1)
+        {
+            int doubled = digit * 2;
+            if (doubled > 9)
+            {
+                evensum += (doubled % 10) + (doubled / 10); // Add digits of the product
+            }
+            else
+            {
+                evensum += doubled;
+            }
+        }
+        else
+        {
+            oddsum += digit;
+        }
+        temp /= 10;
+        position++;
+    }
+    // Debugging print statements
+    printf("Odd sum: %d\n", oddsum);
+    printf("Even sum: %d\n", evensum);
+    int total_sum = oddsum + evensum;
+    printf("Total sum: %d\n", total_sum);
+    if (total_sum % 10 != 0)
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
+    // Determine the card type based on length and starting digits
+    long long first_two_digits = credit;
+    while (first_two_digits >= 100)
+    {
+        first_two_digits /= 10;
+    }
+    printf("Length: %d\n", length);
+    printf("First two digits: %lld\n", first_two_digits);
+
+    if (length == 15 && (first_two_digits == 34 || first_two_digits == 37))
+    {
+        printf("AMEX\n");
+    }
+    else if (length == 16 && (first_two_digits >= 51 && first_two_digits <= 55))
+    {
+        printf("MASTERCARD\n");
+    }
+    else if ((length == 13 || length == 16) && first_two_digits / 10 == 4)
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
+}
