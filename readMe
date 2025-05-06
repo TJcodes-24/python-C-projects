@@ -1,0 +1,26 @@
+# 🧠 TaiCodes J | Python Automation Projects
+
+Welcome! This repo contains sample projects and tools built with Python and C, showcasing automation, scripting, and early SaaS concepts.
+
+## 🔧 Key Projects
+
+### 📁 matchmaker
+A matchmaking quiz system developed for a community — parses survey responses and finds best-fit pairs. (Python)
+
+### 💳 CreditCard
+CLI app to simulate credit card validation using Luhn’s algorithm. (Python)
+
+### 🎮 Mario.c
+A C recreation of Mario-style pyramid logic, built during CS50 coursework. (C)
+
+### 📂 30 Days of Python
+Daily Python coding challenges — shows consistency and progression.
+
+---
+
+## 🚀 Coming Soon
+- A YouTube summarizer tool
+- CSV/Excel report automation
+- Web scraping sample scripts
+
+> 💬 Feel free to reach out via [Upwork](https://www.upwork.com/freelancers/~your-id) or follow my Python journey @taicodes on TikTok.
